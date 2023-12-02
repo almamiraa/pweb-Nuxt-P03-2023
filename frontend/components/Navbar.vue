@@ -10,11 +10,12 @@
 
             <NuxtLink to="/about-us" class="px-3 py-2 rounded-md text-base font-medium text-blue hover:bg-blue-200 focus:outline-none focus:bg-blue-200"> About </NuxtLink>
           </div>
-          <div class="mt-4 sm:ml-6 sm:flex sm:items-center">
+
+          <!-- <div class="mt-4 sm:ml-6 sm:flex sm:items-center">
             <NuxtLink to="/login" class="px-3 py-2 rounded-md text-base font-medium text-blue hover:bg-blue-200 focus:outline-none focus:bg-blue-200"> Login </NuxtLink>
 
             <NuxtLink to="/registration" class="px-3 py-2 rounded-md text-base font-medium text-blue hover:bg-blue-200 focus:outline-none focus:bg-blue-200"> Register </NuxtLink>
-          </div>
+          </div> -->
         </div>
       </div>
     </nav>

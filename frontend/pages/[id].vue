@@ -1,11 +1,9 @@
 <template>
-  <div>
-    <h1>single blog data</h1>
-  </div>
+  <div></div>
 </template>
 
 <script setup>
 definePageMeta({
-  layout: "custom",
+  layout: "custom1",
 });
 </script>

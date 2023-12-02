@@ -2,13 +2,21 @@
   <footer>
     <div class="container mx-auto flex items-center justify-center py-4">
       <div>
-        <p class="text-white">&copy; Copyright 2023 All Rights Reserved.</p>
+        <p class="text-white">&copy; {{ currentYear }} Kelompok Pemweb P03</p>
       </div>
     </div>
   </footer>
 </template>
 
-<script></script>
+<script>
+export default {
+  data() {
+    return {
+      currentYear: new Date().getFullYear(),
+    };
+  },
+};
+</script>
 
 <style scoped>
 footer {

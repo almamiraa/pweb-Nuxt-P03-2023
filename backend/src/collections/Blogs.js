@@ -1,15 +1,35 @@
 import payload from "payload";
+
 /** @type {import('payload/types').CollectionConfig} */
 const Blogs = {
-  slug: "blog",
-  admin: {
-    useAsTitle: "title",
-  },
+  slug: "blogs",
   access: {
     read: () => true,
     update: () => true,
     delete: () => true,
     create: () => true,
+  },
+
+  hooks: {
+    afterOperation: [
+      async (args) => {
+        const collectionName = "blogs";
+        const logAction = args.operation.charAt(0).toUpperCase() + args.operation.slice(1);
+
+        if (["create", "update", "delete"].includes(args.operation)) {
+          console.log("Operation:", args.operation);
+
+          await payload.create({
+            collection: "Logs",
+            data: {
+              name: args.result.title,
+              timestamp: new Date(),
+              action: `logAction`,
+            },
+          });
+        }
+      },
+    ],
   },
 
   fields: [
@@ -19,7 +39,7 @@ const Blogs = {
       required: true,
     },
     {
-      name: "postdate",
+      name: "date",
       type: "date",
       admin: {
         date: {
@@ -29,7 +49,7 @@ const Blogs = {
       },
     },
     {
-      name: "image",
+      name: "picture",
       type: "text",
       required: true,
     },
