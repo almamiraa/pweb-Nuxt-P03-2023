@@ -1,29 +1,37 @@
+import payload from "payload";
+
 /** @type {import('payload/types').CollectionConfig} */
 const Logs = {
   slug: "Logs",
+
   admin: {
     useAsTitle: "name",
   },
+
   access: {
     read: () => true,
     update: () => true,
     delete: () => true,
-    create: () => false,
+    create: () => true,
   },
+
   fields: [
     {
-      name: "name",
-      label: "Title",
+      name: "Collection",
+      label: "Collection",
       type: "text",
-    },
-    {
-      name: "timestamp",
-      type: "date",
       required: true,
     },
     {
-      name: "action",
+      name: "Action",
+      label: "Action",
       type: "text",
+      required: true,
+    },
+    {
+      name: "Timestamp",
+      label: "Timestamp",
+      type: "date",
       required: true,
     },
   ],

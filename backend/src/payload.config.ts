@@ -11,6 +11,7 @@ import Blogs from "./collections/Blogs";
 import Logs from "./collections/Logs";
 
 export default buildConfig({
+  cors: "*",
   admin: {
     user: Users.slug,
     bundler: webpackBundler(),

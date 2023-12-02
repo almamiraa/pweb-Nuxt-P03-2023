@@ -6,7 +6,7 @@
           <div class="mt-4 sm:ml-6 sm:flex sm:items-center">
             <NuxtLink to="/" class="px-3 py-2 rounded-md text-base font-medium text-blue hover:bg-blue-200 focus:outline-none focus:bg-blue-200"> Home </NuxtLink>
 
-            <NuxtLink to="/" class="px-3 py-2 rounded-md text-base font-medium text-blue hover:bg-blue-200 focus:outline-none focus:bg-blue-200"> Blogs </NuxtLink>
+            <NuxtLink to="/blog" class="px-3 py-2 rounded-md text-base font-medium text-blue hover:bg-blue-200 focus:outline-none focus:bg-blue-200"> Blogs </NuxtLink>
 
             <NuxtLink to="/about-us" class="px-3 py-2 rounded-md text-base font-medium text-blue hover:bg-blue-200 focus:outline-none focus:bg-blue-200"> About </NuxtLink>
           </div>

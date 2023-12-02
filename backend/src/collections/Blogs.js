@@ -2,7 +2,12 @@ import payload from "payload";
 
 /** @type {import('payload/types').CollectionConfig} */
 const Blogs = {
-  slug: "blogs",
+  slug: "Blogs",
+
+  admin: {
+    useAsTitle: "Title",
+  },
+
   access: {
     read: () => true,
     update: () => true,
@@ -13,18 +18,19 @@ const Blogs = {
   hooks: {
     afterOperation: [
       async (args) => {
-        const collectionName = "blogs";
-        const logAction = args.operation.charAt(0).toUpperCase() + args.operation.slice(1);
+        const collectionName = "Blogs"; // Nama koleksi (collection) di mana aksi terjadi
+        const logAction = args.operation.charAt(0).toUpperCase() + args.operation.slice(1); // Capitalize operation
 
+        // Hanya buat log untuk operasi create, update, dan delete
         if (["create", "update", "delete"].includes(args.operation)) {
           console.log("Operation:", args.operation);
 
           await payload.create({
             collection: "Logs",
             data: {
-              name: args.result.title,
-              timestamp: new Date(),
-              action: `logAction`,
+              Collection: collectionName,
+              Action: logAction,
+              Timestamp: new Date(),
             },
           });
         }
@@ -34,37 +40,44 @@ const Blogs = {
 
   fields: [
     {
-      name: "title",
+      name: "Title",
+      label: "Title",
       type: "text",
       required: true,
     },
     {
-      name: "date",
+      name: "Author",
+      label: "Author",
+      type: "text",
+      required: true,
+    },
+    {
+      name: "Date",
+      label: "Date",
       type: "date",
       admin: {
         date: {
-          displayFormat: "d MMM yyy",
           pickerAppearance: "dayOnly",
+          displayFormat: "d MMM yyy",
         },
       },
+      required: true,
     },
     {
-      name: "picture",
+      name: "Image",
+      label: "Image",
       type: "text",
       required: true,
     },
     {
-      name: "author",
-      type: "text",
-      required: true,
-    },
-    {
-      name: "content",
+      name: "Description",
+      label: "Description",
       type: "textarea",
       required: true,
     },
     {
-      name: "detailcontent",
+      name: "Content",
+      label: "Content",
       type: "textarea",
       required: true,
     },
