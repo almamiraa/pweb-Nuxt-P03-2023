@@ -1,5 +1,5 @@
 <template>
-  <BlogCard />
+  <CarouselBlog />
 </template>
 
 <script></script>

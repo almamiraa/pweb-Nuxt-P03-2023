@@ -1,7 +1,6 @@
 <template>
   <div>
     <Navbar />
-    <Search />
     <BlogCard />
     <slot />
     <Footer />
